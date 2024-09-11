@@ -1,17 +1,20 @@
 const QRCode = require("qrcode");
 
 exports.generateQRCode = async (qrCodeText, qrCodeOptions) => {
-    console.log(qrCodeOptions);
+    const {
+        margin = 4, // Default margin
+        bgcolor = "#ffffff", // Default background color
+        color = "#000000", // Default color
+    } = qrCodeOptions;
     const renderOption = {
         errorCorrectionLevel: "M", // Error Correction Level
         type: "image/png",
-        margin: qrCodeOptions.margin,
+        margin: margin,
         color: {
-            light: qrCodeOptions.bgcolor,
-            dark: qrCodeOptions.color,
+            light: bgcolor,
+            dark: color,
         },
     };
-    console.log("X", renderOption);
     const qrCodeBuffer = await QRCode.toBuffer(qrCodeText, renderOption);
     return qrCodeBuffer;
 };
