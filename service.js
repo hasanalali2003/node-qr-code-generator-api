@@ -1,8 +1,9 @@
 const QRCode = require("qrcode");
 
 exports.generateQRCode = async (qrCodeText, qrCodeOptions) => {
+    qrCodeOptions = qrCodeOptions || {};
     const {
-        margin = 4, // Default margin
+        margin = 1, // Default margin
         bgcolor = "#ffffff", // Default background color
         color = "#000000", // Default color
     } = qrCodeOptions;
