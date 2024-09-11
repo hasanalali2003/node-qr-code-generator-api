@@ -5,7 +5,7 @@ Welcome to the QR Code Generator API documentation. This API allows you to gener
 ## Base URL
 
 ```
-https://node-qr-code-generator-api.onrender.com/generate-qr
+https://node-qr-code-generator-api.onrender.com/
 ```
 
 ## Endpoint
